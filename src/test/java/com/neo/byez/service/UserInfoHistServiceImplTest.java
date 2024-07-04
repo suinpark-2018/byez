@@ -1,9 +1,11 @@
-package com.neo.byez.service.user;
+package com.neo.byez.service;
 
 import com.neo.byez.dao.user.UserDaoImpl;
 import com.neo.byez.dao.user.UserInfoHistDao;
 import com.neo.byez.domain.user.UserDto;
 import com.neo.byez.domain.user.UserInfoHistDto;
+import com.neo.byez.service.user.UserInfoHistServiceImpl;
+import com.neo.byez.service.user.UserServiceImpl;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,15 +23,17 @@ public class UserInfoHistServiceImplTest {
 
     @Autowired
     UserInfoHistServiceImpl userInfoHistService;
-    @Autowired UserInfoHistDao userInfoHistDao;
+    @Autowired
+    UserInfoHistDao userInfoHistDao;
     @Autowired
     UserServiceImpl userService;
-    @Autowired UserDaoImpl userDao;
+    @Autowired
+    UserDaoImpl userDao;
 
     @Before
     public void reset() throws Exception {
         userInfoHistDao.deleteAllUserInfoHist();
-        userDao.deleteAllUser();
+        userDao.deleteAllTestUser();
 
         // initialize DB
         for (int i = 1; i <= 50; i++) {

@@ -1,5 +1,7 @@
-package com.neo.byez.dao.user;
+package com.neo.byez.dao;
 
+import com.neo.byez.dao.user.UserDaoImpl;
+import com.neo.byez.dao.user.UserInfoHistDaoImpl;
 import com.neo.byez.domain.user.UserDto;
 import com.neo.byez.domain.user.UserInfoHistDto;
 import org.junit.Before;
@@ -43,7 +45,7 @@ public class UserInfoHistDaoImplTest {
     public void addData() throws Exception {
         // clean DB
         userInfoHistDao.deleteAllUserInfoHist();
-        userDao.deleteAllUser();
+        userDao.deleteAllTestUser();
 
         // initialize DB
         for (int i = 1; i <= 50; i++) {
